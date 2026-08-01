@@ -1,0 +1,33 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.succinct.xyz/docs/sp1/prover-network/quickstart
+notes: >-
+  Succinct has no REST/OpenAPI surface; its programmatic API is the gRPC Succinct
+  Prover Network (see grpc/). Authentication is not API-key or OAuth based — the
+  network authenticates requesters and provers with Secp256k1 key pairs (the same
+  key primitive as Ethereum wallets). Requests to the ProverNetwork gRPC service
+  are signed with the account private key; the assigned fulfiller/requester
+  identity is derived from the signature.
+summary:
+  types: [signature]
+  scheme: secp256k1-signed-grpc
+  api_key_in: []
+  oauth2_flows: []
+schemes:
+  - name: NetworkKeyPair
+    type: signature
+    scheme: secp256k1
+    location: request-signature
+    env: NETWORK_PRIVATE_KEY
+    docs: https://docs.succinct.xyz/docs/sp1/prover-network/quickstart
+    description: >-
+      Requester/prover account key pair. Generate with `cast wallet new` (Foundry)
+      or export from a wallet. The private key is set as NETWORK_PRIVATE_KEY and
+      used by ProverClient to sign gRPC calls (RequestProof, FulfillProof, etc.).
+      Fund the derived account with PROVE deposited via the Explorer before
+      requesting proofs.
+  - name: VerifierPublic
+    type: none
+    description: >-
+      The Verifier gRPC service (VerifyProof) requires no authentication — proofs
+      are self-verifying.

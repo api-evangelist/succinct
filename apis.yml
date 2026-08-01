@@ -1,8 +1,28 @@
 aid: succinct
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/succinct.png
 name: Succinct
-description: 'Succinct is a company surfaced as a portfolio company of paradigm and added to the API Evangelist
-  network as a stub for enrichment. Sector: crypto-infrastructure. This profile is a lead awaiting the
-  enrichment pipeline.'
+description: >-
+  Succinct is an applied cryptography company building zero-knowledge proof
+  infrastructure. Its flagship product is SP1, an open-source zkVM that proves the
+  correct execution of RISC-V programs, and the Succinct Prover Network (SPN), a
+  decentralized on-chain marketplace on Ethereum that coordinates a distributed
+  network of provers to generate ZK proofs for any piece of software, settled with
+  the PROVE token. Succinct's programmatic surface is a gRPC/protobuf API (the
+  ProverNetwork, ArtifactStore, and Verifier services) rather than REST/OpenAPI;
+  developers integrate in Rust via the SP1 SDK and CLI (cargo prove / sp1up) and
+  authenticate to the network with a Secp256k1 key pair. Backed by Paradigm.
 url: https://raw.githubusercontent.com/api-evangelist/succinct/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,10 +32,18 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
 - Crypto Infrastructure
+- Zero-Knowledge Proofs
+- zkVM
+- Blockchain
+- Ethereum
+- Cryptography
+- Developer Tools
+- Prover Network
+- gRPC
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -25,3 +53,58 @@ maintainers:
 common:
 - type: Website
   url: https://succinct.xyz
+- type: DeveloperPortal
+  url: https://docs.succinct.xyz
+- type: Documentation
+  url: https://docs.succinct.xyz
+- type: APIReference
+  url: https://docs.succinct.xyz/docs/provers/building-a-prover/api
+- type: GettingStarted
+  url: https://docs.succinct.xyz/docs/sp1/getting-started/quickstart
+- type: Blog
+  url: https://blog.succinct.xyz
+- type: GitHubOrganization
+  url: https://github.com/succinctlabs
+- type: Pricing
+  url: https://docs.succinct.xyz/docs/protocol/prove/pay
+- type: StatusPage
+  url: https://status.succinct.xyz
+- type: Deprecation
+  url: https://docs.succinct.xyz/docs/sp1/developers/upgrades
+- type: Lifecycle
+  url: lifecycle/succinct-lifecycle.yml
+- type: ChangeLog
+  url: changelog/succinct-changelog.yml
+- type: Packages
+  url: packages/succinct-packages.yml
+- type: SDKs
+  url: packages/succinct-packages.yml
+- type: CLI
+  url: cli/succinct-cli.yml
+- type: Authentication
+  url: authentication/succinct-authentication.yml
+- type: Conformance
+  url: conformance/succinct-conformance.yml
+- type: Conventions
+  url: conventions/succinct-conventions.yml
+- type: LLMsTxt
+  url: llms/succinct-llms.txt
+- type: DomainSecurity
+  url: security/succinct-domain-security.yml
+- type: Protobuf
+  name: Succinct Prover Network (ProverNetwork gRPC service)
+  url: grpc/succinct-network.proto
+- type: Protobuf
+  name: Succinct ArtifactStore gRPC service
+  url: grpc/succinct-artifact.proto
+- type: Protobuf
+  name: Succinct Verifier gRPC service
+  url: grpc/succinct-verifier.proto
+- type: Protobuf
+  name: Succinct Prover Network shared types
+  url: grpc/succinct-types.proto
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 13
+  pass: local-v1

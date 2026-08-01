@@ -1,0 +1,56 @@
+generated: '2026-07-21'
+method: searched
+source: https://crates.io (repository https://github.com/succinctlabs/sp1)
+notes: >-
+  Succinct's developer surface is delivered as first-party Rust crates for the SP1
+  zkVM and the Succinct Prover Network client. All crates are published from the
+  succinctlabs/sp1 monorepo. There is no npm/PyPI/Maven client library; SP1 is a
+  Rust-native toolchain.
+packages:
+  - language: rust
+    registry: crates.io
+    name: sp1-sdk
+    url: https://crates.io/crates/sp1-sdk
+    install: cargo add sp1-sdk
+    version: 6.3.1
+    repository: https://github.com/succinctlabs/sp1
+    official: true
+    description: >-
+      Primary SP1 SDK. Builds proofs locally or requests them from the Succinct
+      Prover Network via ProverClient (network mode).
+  - language: rust
+    registry: crates.io
+    name: sp1-zkvm
+    url: https://crates.io/crates/sp1-zkvm
+    install: cargo add sp1-zkvm
+    version: 6.3.1
+    repository: https://github.com/succinctlabs/sp1
+    official: true
+    description: Guest-program library used inside SP1 zkVM programs (io, syscalls, precompiles).
+  - language: rust
+    registry: crates.io
+    name: sp1-build
+    url: https://crates.io/crates/sp1-build
+    install: cargo add sp1-build
+    version: 6.3.1
+    repository: https://github.com/succinctlabs/sp1
+    official: true
+    description: Build helper that compiles SP1 guest programs to RISC-V ELF from build scripts.
+  - language: rust
+    registry: crates.io
+    name: sp1-prover
+    url: https://crates.io/crates/sp1-prover
+    install: cargo add sp1-prover
+    version: 6.3.1
+    repository: https://github.com/succinctlabs/sp1
+    official: true
+    description: Core proving engine used by the SDK and the prover network fulfillers.
+  - language: rust
+    registry: crates.io
+    name: sp1-core-machine
+    url: https://crates.io/crates/sp1-core-machine
+    install: cargo add sp1-core-machine
+    version: 6.3.1
+    repository: https://github.com/succinctlabs/sp1
+    official: true
+    description: Core RISC-V AIR/constraint machine for SP1 proof generation.

@@ -1,0 +1,26 @@
+generated: '2026-07-21'
+method: derived
+source: grpc/succinct-network.proto + docs.succinct.xyz
+notes: >-
+  Succinct exposes a gRPC/protobuf API (the Succinct Prover Network) rather than a
+  REST/OpenAPI surface. Conformance is derived from the published proto services
+  and documented auth model; the network is an on-chain protocol on Ethereum.
+standards:
+  - id: grpc
+    conforms: true
+    evidence: ProverNetwork/ArtifactStore/Verifier services defined in proto/*.proto
+  - id: protobuf3
+    conforms: true
+    evidence: syntax = "proto3" across network/artifact/types/verifier protos
+  - id: secp256k1-signing
+    conforms: true
+    evidence: requester/prover accounts authenticate with Secp256k1 key pairs
+  - id: oauth2
+    conforms: false
+  - id: openid-connect
+    conforms: false
+  - id: rfc9457-problem-details
+    conforms: false
+  - id: rest-openapi
+    conforms: false
+    evidence: no REST/OpenAPI surface; API is gRPC only

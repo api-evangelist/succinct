@@ -1,0 +1,42 @@
+generated: '2026-07-21'
+method: searched
+source: https://github.com/succinctlabs/sp1/releases
+scheme: semver
+current_version: 6.3.1
+component: sp1
+notes: >-
+  SP1 (the zkVM + SDK) is versioned on GitHub Releases and crates.io. The Succinct
+  Prover Network protocol is versioned separately (network current v1.3.0 in the
+  succinctlabs/network repo). Recent window only.
+entries:
+  - version: v6.3.1
+    date: '2026-06-25'
+    breaking: false
+    highlights: [Patch release on the 6.3 line.]
+  - version: v6.3.0
+    date: '2026-06-20'
+    breaking: false
+    highlights: [Minor feature release of the SP1 zkVM and SDK.]
+  - version: v6.2.4
+    date: '2026-06-08'
+    breaking: false
+    highlights: [Patch release.]
+  - version: v6.2.3
+    date: '2026-06-01'
+    breaking: false
+    highlights: [Patch release.]
+  - version: v6.2.2
+    date: '2026-05-23'
+    breaking: false
+    highlights: [Patch release.]
+  - version: v6.2.1
+    date: '2026-05-15'
+    breaking: false
+    highlights: [Patch release.]
+network_entries:
+  - version: v1.3.0
+    date: '2026-05-13'
+    repo: https://github.com/succinctlabs/network
+  - version: v1.2.0
+    date: '2026-04-22'
+    repo: https://github.com/succinctlabs/network

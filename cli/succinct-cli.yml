@@ -1,0 +1,31 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.succinct.xyz/docs/sp1/getting-started/install
+name: cargo prove (SP1 toolchain)
+installer: sp1up
+install:
+  - method: sp1up
+    command: "curl -L https://sp1up.succinct.xyz | bash && sp1up"
+    description: >-
+      Installs the SP1 toolchain, which provides the `cargo prove` command and the
+      succinct RISC-V Rust toolchain.
+surface:
+  - group: cargo prove
+    description: Cargo subcommand for building and proving SP1 programs.
+    commands:
+      - name: new
+        summary: Scaffold a new SP1 project from the template.
+      - name: build
+        summary: Compile the guest program to a RISC-V ELF.
+      - name: prove
+        summary: Generate a proof for a compiled program.
+      - name: vkey
+        summary: Compute the verification key for a program.
+  - group: sp1up
+    description: Version manager / installer for the SP1 toolchain.
+    commands:
+      - name: sp1up
+        summary: Install or update to the latest (or a pinned) SP1 toolchain version.
+notes: >-
+  The CLI binary is distributed via the sp1up installer rather than a package
+  registry; the underlying crates are catalogued in packages/.

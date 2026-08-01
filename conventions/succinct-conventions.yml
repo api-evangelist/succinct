@@ -1,0 +1,36 @@
+generated: '2026-07-21'
+method: derived
+source: grpc/succinct-network.proto + docs.succinct.xyz/docs/sp1/prover-network
+notes: >-
+  Cross-cutting semantics for the Succinct Prover Network gRPC API. Derived from
+  the published proto service and the prover-network docs. No idempotency-key
+  contract, cursor pagination convention, or REST error envelope is documented —
+  those fields are recorded as not-applicable / not-documented rather than invented.
+authentication:
+  style: secp256k1-signed-grpc
+  env: NETWORK_PRIVATE_KEY
+  ref: authentication/succinct-authentication.yml
+transport:
+  protocol: gRPC (proto3)
+  streaming: true
+  streaming_example: SubscribeProofRequests returns stream types.ProofRequest
+idempotency:
+  supported: false
+  notes: >-
+    Proof requests are on-chain, nonce/settlement governed rather than
+    idempotency-key based; no Idempotency-Key header is documented.
+pagination:
+  documented: false
+  notes: >-
+    GetFilteredProofRequests / GetSearchResults take filter inputs; no cursor/offset
+    pagination convention is published in the proto.
+request_tracing:
+  documented: false
+versioning:
+  ref: lifecycle/succinct-lifecycle.yml
+  scheme: semver (SP1 6.x; network protocol 1.x)
+error_model:
+  style: grpc-status
+  notes: Errors surface as gRPC status codes; no RFC 9457 problem+json envelope.
+rate_limit_signal:
+  documented: false
